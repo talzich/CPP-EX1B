@@ -54,8 +54,8 @@ const string none_right = "  ";
 const string parts[INPUT_LENGTH][NUM_OF_OPTIONS] = {
     {straw_hat, mexican_hat, fez, russian_hat},       // Hats
     {",", ".", "_", " "},                             // Noses
-    {".", "o", "0", "-"},                             // Left eye
-    {".", "o", "0", "-"},                             // Right eye
+    {".", "o", "O", "-"},                             // Left eye
+    {".", "o", "O", "-"},                             // Right eye
     {normal_left, up_left, down_left, none_left},     // Left arms
     {normal_right, up_right, down_right, none_right}, // Right arms
     {buttons, vest, inward_arms, none},               // Torsos
