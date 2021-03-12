@@ -14,11 +14,12 @@ enum parts_indices
 };
 
 const string WS = " ";
-const short UP = 0;
-const short DOWN = 1;
+const short UPPER = 0;
+const short LOWER = 1;
 
 const short INPUT_LENGTH = 8;
-const short NUM_OF_TYPES = 4;
+const short NUM_OF_OPTIONS = 4;
+const int NUM_OF_PARTS = 8;
 
 // Setting up possible hats
 const string straw_hat = WS + "_===_";
@@ -50,7 +51,7 @@ const string up_right = "/ ";
 const string down_right = " \\";
 const string none_right = "  ";
 
-const string parts[INPUT_LENGTH][NUM_OF_TYPES] = {
+const string parts[INPUT_LENGTH][NUM_OF_OPTIONS] = {
     {straw_hat, mexican_hat, fez, russian_hat},       // Hats
     {",", ".", "_", " "},                             // Noses
     {".", "o", "0", "-"},                             // Left eye

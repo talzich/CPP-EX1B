@@ -11,9 +11,9 @@ using namespace ariel;
 
 int check_validity(long int number){
     string input = to_string(number);
-    if (input.size() != 8)
+    if (input.size() != INPUT_LENGTH)
         return 0;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < INPUT_LENGTH; i++)
     {
         if (input.at(i) < '1' || input.at(i) > '4')
             return 0;
@@ -29,7 +29,6 @@ namespace ariel{
     and returns that array
     */
     string *fetch_parts(const long int input){
-    const int NUM_OF_PARTS = 8;
 
     string *build = new string[NUM_OF_PARTS];
     string str_input = to_string(input);
@@ -57,13 +56,13 @@ namespace ariel{
         string *parts = fetch_parts(number);
 
         output += ( parts[HAT]+"\n" ); // Placing hat
-        output += parts[LEFT_ARM].at(UP); // Placing upper left arm
+        output += parts[LEFT_ARM].at(UPPER); // Placing upper left arm
         output += ( "(" + parts[LEFT_EYE] + parts[NOSE] + parts[RIGHT_EYE] + ")" ); // Placing face and frame
-        output += parts[RIGHT_ARM].at(UP); // Placing upper right arm and frame
+        output += parts[RIGHT_ARM].at(UPPER); // Placing upper right arm and frame
         output += "\n";
-        output += parts[LEFT_ARM].at(DOWN); // Placing upper left arm and frame
+        output += parts[LEFT_ARM].at(LOWER); // Placing upper left arm and frame
         output += ( "(" + parts[TORSO] + ")" ); // Placing torso and frame
-        output += parts[RIGHT_ARM].at(DOWN); // Placing upper right arm and frame
+        output += parts[RIGHT_ARM].at(LOWER); // Placing upper right arm and frame
         output += "\n";
         output += (WS + "(" + parts[BASE] + ")" + "\n");
 
