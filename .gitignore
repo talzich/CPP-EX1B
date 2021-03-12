@@ -34,3 +34,7 @@ solution*
 *.app
 demo
 test
+
+# Development Enviroment
+.DS_Store
+.vscode/

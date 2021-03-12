@@ -64,5 +64,5 @@ namespace ariel
 {
     string snowman(long int number);
     int get_index(char digit);
-    string *fetch_parts(const long int input);
+    array<string, NUM_OF_PARTS> fetch_parts(const long int input);
 }

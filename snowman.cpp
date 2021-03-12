@@ -11,12 +11,12 @@ using namespace ariel;
 
 int check_validity(long int number){
     string input = to_string(number);
-    if (input.size() != INPUT_LENGTH)
-        return 0;
+    if (input.size() != INPUT_LENGTH){return 0;}
+        
     for (int i = 0; i < INPUT_LENGTH; i++)
     {
-        if (input.at(i) < '1' || input.at(i) > '4')
-            return 0;
+        if (input.at(i) < '1' || input.at(i) > '4'){return 0;}
+            
     }
     return 1;
 }
@@ -28,16 +28,16 @@ namespace ariel{
     parts from the parts matrix, puts them in their corresponding locations in an array
     and returns that array
     */
-    string *fetch_parts(const long int input){
+    array<string, NUM_OF_PARTS> fetch_parts(const long int input){
 
-    string *build = new string[NUM_OF_PARTS];
+    array<string, NUM_OF_PARTS> build;
     string str_input = to_string(input);
-
-    int index;
-    for (int i = 0; i < str_input.size(); i++)
-    {
-        index = get_index(str_input.at(i));
-        build[i] = parts[i][index];
+    
+    int i = 0, j = 0;;
+    for(auto& e : build){
+        j = get_index(str_input.at(i));
+        e = parts[i][j];
+        i++;
     }
     return build;
 }
@@ -48,12 +48,12 @@ namespace ariel{
 }
 
     string snowman(long int number){
-        if(!(check_validity(number))){
+        if(check_validity(number) == 0){
             throw invalid_argument("Invalid input: " + to_string(number));
         }
         
-        string output = "";
-        string *parts = fetch_parts(number);
+        string output;
+        array<string, NUM_OF_PARTS> parts = fetch_parts(number);
 
         output += ( parts[HAT]+"\n" ); // Placing hat
         output += parts[LEFT_ARM].at(UPPER); // Placing upper left arm
