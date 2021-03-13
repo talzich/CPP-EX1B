@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,10 +15,14 @@ enum parts_indices
     BASE
 };
 
+// For use of whitespace
 const string WS = " ";
+
+// For upper and lower arms
 const short UPPER = 0;
 const short LOWER = 1;
 
+// Different lengths 
 const short INPUT_LENGTH = 8;
 const short NUM_OF_OPTIONS = 4;
 const int NUM_OF_PARTS = 8;
@@ -52,8 +57,9 @@ const string up_right = "/ ";
 const string down_right = " \\";
 const string none_right = "  ";
 
-const string parts[INPUT_LENGTH][NUM_OF_OPTIONS] = {
-    {straw_hat, mexican_hat, fez, russian_hat},       // Hats
+
+const vector<vector<string>> parts
+    {{straw_hat, mexican_hat, fez, russian_hat},       // Hats
     {",", ".", "_", " "},                             // Noses
     {".", "o", "O", "-"},                             // Left eye
     {".", "o", "O", "-"},                             // Right eye
@@ -61,6 +67,7 @@ const string parts[INPUT_LENGTH][NUM_OF_OPTIONS] = {
     {normal_right, up_right, down_right, none_right}, // Right arms
     {buttons, vest, inward_arms, none},               // Torsos
     {buttons, feet, flat, none}};                     // Bases
+
 namespace ariel
 {
     string snowman(long int number);
