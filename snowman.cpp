@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <array>
+#include <gsl/gsl>
 
 #include "snowman.hpp"
 
@@ -33,10 +34,11 @@ namespace ariel{
     array<string, NUM_OF_PARTS> build;
     string str_input = to_string(input);
     
-    int i = 0, j = 0;;
+    int i = 0;
+    int j = 0;
     for(auto& e : build){
         j = get_index(str_input.at(i));
-        e = parts[i][j];
+        e = gsl::at(gsl::at(parts, i), j);
         i++;
     }
     return build;
